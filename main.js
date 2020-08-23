@@ -1,3 +1,4 @@
+// Clone the node containing the recipe
 const CloneRecipe = className => {
     let original = document.querySelector(className) 
     let clone = original.cloneNode(true)
@@ -5,6 +6,7 @@ const CloneRecipe = className => {
     return clone
 }
 
+// Create a modal popup window that includes the content provided in the parameter
 const CreateModal = content => {
     let modal = document.createElement("div")
     let modalStyle = document.createElement("style")
@@ -17,10 +19,11 @@ const CreateModal = content => {
     modal.nextSibling.setAttribute("id", "body-wrapper")
 }
 
+// Create the parts of the recipe 
 let test = CloneRecipe(".wprm-recipe-container")
 CreateModal(test)
 
-
+// Close recipe when clicking outside of the window
 window.addEventListener('click', (event) => {
     let modal = document.getElementsByClassName('recipe-modal')
     let bodywrapper = document.getElementById('body-wrapper')
